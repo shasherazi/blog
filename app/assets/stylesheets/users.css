@@ -1,0 +1,30 @@
+.users-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  list-style-type: none;
+  gap: 10px;
+  padding: 0;
+}
+
+.users-list-item{
+  width: 100%;
+  border: 1px solid gray;
+}
+
+.user {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+.user > img {
+  width: 150px;
+  margin-right: 10px;
+}
+
+.num-of-posts{
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+}

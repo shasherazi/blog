@@ -1,13 +1,12 @@
 namespace :db do
   desc 'Fill database with sample data'
   task populate: :environment do
-    puts 'Deleting all data...'
+    puts 'Recreating the database...'
 
-    # delete all data
-    Comment.delete_all
-    Like.delete_all
-    Post.delete_all
-    User.delete_all
+    # recreate the database
+    Rake::Task['db:drop'].invoke
+    Rake::Task['db:create'].invoke
+    Rake::Task['db:migrate'].invoke
 
     puts 'Deleted all data!'
     puts 'Creating sample data...'

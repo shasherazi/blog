@@ -1,1 +1,4 @@
-<h1> Placeholder for /users </h1>
+<%= stylesheet_link_tag "users" %>
+<div class="users">
+  <%= render "shared/user", collection: @users %>
+</div>
