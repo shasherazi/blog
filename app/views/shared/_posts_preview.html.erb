@@ -1,0 +1,13 @@
+<div class="post-preview-partial">
+  <p class="post-info">
+    <a href="<%= user_post_path(@user, post) %>">
+      <p><%= post.title %></p>
+    </a>
+    <p class="comments-and-likes">Comments:
+      <%= post.comments_counter %>, likes:
+      <%= post.likes_counter %></p>
+  </p>
+  <p class="post-content">
+    <%= post.text %>
+  </p>
+</div>
