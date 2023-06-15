@@ -1,4 +1,7 @@
 <%= stylesheet_link_tag "users" %>
+<a href="<%= new_user_post_path(current_user) %>">
+  Create new post
+</a>
 <div class="users">
   <ul class="users-list">
     <% @users.each do |user| %>
