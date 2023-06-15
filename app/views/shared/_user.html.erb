@@ -1,8 +1,10 @@
 <div class="user-partial">
   <img src="<%= user.photo %>" alt="avatar"/>
+  <div class="user-info">
   <a href="<%= user_path(user) %>">
     <h3><%= user.name %></h3>
   </a>
   <p class="num-of-posts">Number of posts:
-    <%= user.posts_counter %></p>
+  <%= user.posts_counter %></p>
+  </div>
 </div>

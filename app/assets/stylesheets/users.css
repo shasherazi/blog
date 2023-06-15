@@ -16,12 +16,19 @@
   display: flex;
   width: 100%;
   position: relative;
-  border: 1px solid gray;
 }
 
 .user-partial > img {
   width: 150px;
   margin-right: 10px;
+  border: 1px solid gray;
+  padding: 5px;
+}
+
+.user-info{
+  width: 100%;
+  border: 1px solid gray;
+  padding-left: 10px;
 }
 
 .num-of-posts {
