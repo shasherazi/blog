@@ -1,9 +1,31 @@
-.comments-box{
+/* index.html.erb */
+
+.comments-box {
   margin-bottom: 30px;
   border: 1px solid gray;
   border-top: none;
   padding: 0 10px;
 }
-.comment{
+.comment {
   margin: 3px 0;
+}
+
+/* show.html.erb */
+
+.post-box {
+  border: 1px solid gray;
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+
+.post-info {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: underline;
+}
+
+.posts-comments-box {
+  border: 1px solid gray;
+  margin-bottom: 30px;
+  padding: 0 10px;
 }

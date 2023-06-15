@@ -3,9 +3,10 @@
     <a href="<%= user_post_path(user, post) %>">
       <p><%= post.title %></p>
     </a>
-    <p class="comments-and-likes">Comments:
-      <%= post.comments_counter %>, likes:
-      <%= post.likes_counter %></p>
+    <p class="comments-and-likes">
+      <%= pluralize(post.comments.count, "comment") %>
+      <%= pluralize(post.likes.count, "like") %>
+    </p>
   </p>
   <p class="post-content <%= 'trim' if trim %>">
     <%= post.text %>
