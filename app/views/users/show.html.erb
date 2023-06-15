@@ -6,7 +6,7 @@
   </section>
   <section class="user-posts-preview">
     <% @user.posts.limit(3).each do |post| %>
-      <%= render "shared/posts_preview", post: post %>
+      <%= render "shared/post_preview", post: post, user: @user, trim: true %>
     <% end %>
   </section>
   <button class="all-posts-btn">
