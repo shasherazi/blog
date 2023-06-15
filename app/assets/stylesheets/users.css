@@ -56,7 +56,7 @@
   position: relative;
 }
 
-.trim{
+.trim {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -74,4 +74,3 @@
   height: 30px;
   align-self: center;
 }
-
