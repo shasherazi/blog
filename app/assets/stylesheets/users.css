@@ -1,0 +1,83 @@
+/* index.html.erb */
+.users-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  list-style-type: none;
+  gap: 10px;
+  padding: 0;
+}
+
+.users-list-item {
+  width: 100%;
+}
+
+.user-partial {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+.user-partial > img {
+  width: 150px;
+  margin-right: 10px;
+  border: 1px solid gray;
+  padding: 5px;
+}
+
+.user-info {
+  width: 100%;
+  border: 1px solid gray;
+  padding-left: 10px;
+}
+
+.num-of-posts {
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+}
+
+/* show.html.erb */
+.user {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.user-bio {
+  border: 1px solid gray;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+.user-posts-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.post-preview-partial {
+  border: 1px solid gray;
+  padding: 0 15% 0 10px;
+  position: relative;
+}
+
+.trim {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.comments-and-likes {
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+  text-decoration: underline;
+}
+
+.all-posts-btn {
+  width: 100px;
+  height: 30px;
+  align-self: center;
+}

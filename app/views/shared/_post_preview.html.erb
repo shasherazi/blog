@@ -1,0 +1,15 @@
+<div class="post-preview-partial">
+  <p class="post-info">
+    <a href="<%= user_post_path(user, post) %>">
+      <p><%= post.title %></p>
+    </a>
+    <p class="comments-and-likes">
+      <%= pluralize(post.comments.count, "comment") %>
+      <%= pluralize(post.likes.count, "like") %>
+    </p>
+  </p>
+  <p class="post-content <%= 'trim' if trim %>">
+    <%= post.text %>
+  </p>
+  <br>
+</div>

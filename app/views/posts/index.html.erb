@@ -1,1 +1,16 @@
-<h1> Placeholder for /users/:id/posts </h1>
+<%= stylesheet_link_tag "posts" %>
+<div class="posts">
+  <%= render "shared/user", user: @user %>
+  <br>
+  <br>
+  <br>
+  <% @user.posts.each do |post| %>
+    <%= render "shared/post_preview", post: post, user: @user, trim: true %>
+    <div class="comments-box">
+      <% post.comments.each do |comment| %>
+        <p class="comment"><%= comment.author.name %>:
+          <%= comment.text %></p>
+      <% end %>
+    </div>
+  <% end %>
+</div>

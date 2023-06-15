@@ -1,1 +1,15 @@
-<h1> Placeholder for /users/:id </h1>
+<div class="user">
+  <%= render "shared/user", user: @user %>
+  <section class="user-bio">
+    <h2>Bio</h2>
+    <p><%= @user.bio %></p>
+  </section>
+  <section class="user-posts-preview">
+    <% @user.posts.limit(3).each do |post| %>
+      <%= render "shared/post_preview", post: post, user: @user, trim: true %>
+    <% end %>
+  </section>
+  <button class="all-posts-btn">
+    <a href="<%= user_posts_path(@user) %>">See all posts</a>
+  </button>
+</div>

@@ -1,1 +1,26 @@
-<h1> Placeholder for /users/:id/posts/:id </h1>
+<div class="post">
+  <div class="post-box">
+    <div class="post-info">
+      <p>
+        <%= @post.title %>
+        by
+        <%= @post.author.name %>
+      </p>
+      <p class="post-comments-and-likes">
+        <%= pluralize(@post.comments.count, "comment") %>
+        <%= pluralize(@post.likes.count, "like") %>
+      </p>
+    </div>
+    <p class="post-body">
+      <%= @post.text %>
+    </p>
+  </div>
+  <div class="posts-comments-box">
+    <% @post.comments.each do |comment| %>
+      <p class="comment">
+        <a href="<%= user_path(comment.author) %>">
+          <%= comment.author.name %></a>:
+        <%= comment.text %></p>
+    <% end %>
+  </div>
+</div>
