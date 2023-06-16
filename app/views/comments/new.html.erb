@@ -1,0 +1,10 @@
+<%= form_with(model: [@post, Comment.new], url: user_post_comments_path(@user, @post)) do |form| %>
+  <div class="field">
+    <%= form.text_area :text, placeholder: "Write a comment..." %>
+  </div>
+  <div class="actions">
+    <%= form.submit "Submit" %>
+  </div>
+  <%= render "shared/flashes" %>
+
+<% end %>
