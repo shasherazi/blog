@@ -23,3 +23,18 @@ a:hover {
   color: #000;
   text-decoration: underline;
 }
+
+.flash {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.flash.notice {
+  background-color: #dff0d8;
+  color: #3c763d;
+}
+
+.flash.errors {
+  background-color: #f2dede;
+  color: #a94442;
+}
