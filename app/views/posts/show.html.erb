@@ -15,6 +15,12 @@
       <%= @post.text %>
     </p>
   </div>
+  <%= form_with model: [@post, Like.new], url: user_post_likes_path(@user, @post) do |form| %>
+    <div class="actions">
+      <%= form.submit "Like this post" %>
+    </div>
+  <% end %>
+  <br>
   <div class="posts-comments-box">
     <% @post.comments.each do |comment| %>
       <p class="comment">
@@ -23,18 +29,18 @@
         <%= comment.text %></p>
     <% end %>
   </div>
-      <%= form_with(model: [@post, Comment.new], url: user_post_comments_path(@user, @post)) do |form| %>
-      <div class="field">
-        <%= form.text_area :text, placeholder: "Write a comment..." %>
-      </div>
-      <div class="actions">
-        <%= form.submit "Submit" %>
-      </div>
-      <%= render "shared/flashes" %>
-    <% end %>
+  <%= form_with(model: [@post, Comment.new], url: user_post_comments_path(@user, @post)) do |form| %>
+    <div class="field">
+      <%= form.text_area :text, placeholder: "Write a comment..." %>
+    </div>
+    <div class="actions">
+      <%= form.submit "Submit" %>
+    </div>
+  <% end %>
   <button>
     <a href="<%= user_posts_path(@user) %>" class="post-link">
       Go to all posts
     </a>
   </button>
+  <%= render "shared/flashes" %>
 </div>
