@@ -7,7 +7,7 @@
   <% @user.posts.includes(:comments).each do |post| %>
     <%= render "shared/post_preview", post: post, user: @user, trim: true %>
     <div class="comments-box">
-      <% post.comments.each do |comment| %>
+      <% post.comments.includes(:author).each do |comment| %>
         <p class="comment"><%= comment.author.name %>:
           <%= comment.text %></p>
       <% end %>
