@@ -22,7 +22,7 @@
   <% end %>
   <br>
   <div class="posts-comments-box">
-    <% @post.comments.each do |comment| %>
+    <% @post.comments.includes(:author).each do |comment| %>
       <p class="comment">
         <a href="<%= user_path(comment.author) %>">
           <%= comment.author.name %></a>:
