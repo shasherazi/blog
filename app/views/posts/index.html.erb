@@ -4,7 +4,7 @@
   <br>
   <br>
   <br>
-  <% @user.posts.each do |post| %>
+  <% @user.posts.includes(:comments).each do |post| %>
     <%= render "shared/post_preview", post: post, user: @user, trim: true %>
     <div class="comments-box">
       <% post.comments.each do |comment| %>
