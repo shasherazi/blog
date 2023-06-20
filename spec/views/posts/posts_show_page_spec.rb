@@ -30,6 +30,13 @@ RSpec.describe 'post show page', type: :feature do
     end
   end
 
+  scenario 'display text of each comment' do
+    visit user_post_path(post.author, post)
+    post.comments.each do |comment|
+      expect(page).to have_content(comment.text)
+    end
+  end
+
   scenario 'display post text' do
     visit user_post_path(post.author, post)
     expect(page).to have_content(post.text)
