@@ -46,6 +46,11 @@ RSpec.describe 'post index page', type: :feature do
     expect(page).to have_content(comment.text)
   end
 
+  scenario 'display "pagination" button' do
+    visit user_posts_path(post.author)
+    expect(page).to have_content('Pagination')
+  end
+
   scenario 'when clicked redirects to post show page' do
     visit user_posts_path(post.author)
     click_link(href: user_post_path(post.author, post))
