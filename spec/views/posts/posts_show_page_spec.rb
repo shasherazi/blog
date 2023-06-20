@@ -1,8 +1,6 @@
 require 'rails_helper'
 
-user = FactoryBot.create(:user_with_posts)
-post = FactoryBot.create(:post_with_comments, author: user)
-comment = FactoryBot.create(:comment)
+post = FactoryBot.create(:post_with_comments)
 
 RSpec.describe 'post show page', type: :feature do
   scenario 'display post title' do
@@ -27,7 +25,9 @@ RSpec.describe 'post show page', type: :feature do
 
   scenario 'display username of each commenter' do
     visit user_post_path(post.author, post)
-    expect(page).to have_content(comment.author.name)
+    post.comments.each do |comment|
+      expect(page).to have_content(comment.author.name)
+    end
   end
 
   scenario 'display post text' do
