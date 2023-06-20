@@ -8,4 +8,9 @@ RSpec.describe 'user show page', type: :feature do
     visit user_path(user)
     expect(page).to have_css("img[src='#{user.photo}']")
   end
+
+  scenario 'display username on the page' do
+    visit user_path(user)
+    expect(page).to have_content(user.name)
+  end
 end
