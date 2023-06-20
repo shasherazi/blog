@@ -31,6 +31,7 @@ RSpec.describe 'user show page', type: :feature do
 
   scenario 'when clicked redirects to post show page' do
     visit user_path(user)
+    post = user.posts.first
     click_link(href: user_post_path(user, post))
     expect(page).to have_content(post.text)
   end
