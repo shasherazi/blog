@@ -24,7 +24,7 @@ RSpec.describe Comment, type: :model do
     Comment.new(
       text: 'This is a test comment',
       author: user,
-      post: post
+      post:
     )
   end
 
