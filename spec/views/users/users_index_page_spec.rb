@@ -17,4 +17,10 @@ RSpec.describe 'user index page', type: :feature do
     visit '/'
     expect(page).to have_content(user.posts_counter)
   end
+
+  scenario 'when clicked redirects to user show page' do
+    visit '/'
+    click_link(href: user_path(user))
+    expect(page).to have_content(user.name)
+  end
 end
