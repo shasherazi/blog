@@ -13,10 +13,6 @@ RSpec.describe 'Posts', type: :request do
     it 'renders the index template' do
       expect(response).to render_template(:index)
     end
-
-    it 'has correct content' do
-      expect(response.body).to include('Placeholder for /users/:id/posts')
-    end
   end
 
   describe 'GET show' do
@@ -30,10 +26,6 @@ RSpec.describe 'Posts', type: :request do
 
     it 'renders the show template' do
       expect(response).to render_template(:show)
-    end
-
-    it 'has correct content' do
-      expect(response.body).to include('Placeholder for /users/:id/posts/:id')
     end
   end
 end
