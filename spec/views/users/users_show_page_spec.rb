@@ -18,4 +18,9 @@ RSpec.describe 'user show page', type: :feature do
     visit user_path(user)
     expect(page).to have_content(user.posts_counter)
   end
+
+  scenario 'display user bio' do
+    visit user_path(user)
+    expect(page).to have_content(user.bio)
+  end
 end
