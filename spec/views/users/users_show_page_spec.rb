@@ -13,4 +13,9 @@ RSpec.describe 'user show page', type: :feature do
     visit user_path(user)
     expect(page).to have_content(user.name)
   end
+
+  scenario 'display the number of posts' do
+    visit user_path(user)
+    expect(page).to have_content(user.posts_counter)
+  end
 end
