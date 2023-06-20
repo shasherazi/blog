@@ -1,3 +1,5 @@
+require 'faker'
+
 namespace :db do
   desc 'Fill database with sample data'
   task populate: :environment do
@@ -14,6 +16,8 @@ namespace :db do
     # first user
     first_user = User.create!(
       name: 'First User',
+      email: 'first@user.com',
+      password: 'firstuserpassword',
       photo: 'https://cdna.artstation.com/p/assets/images/images/029/616/034/large/alyssa-niziol-pfpsketch2-smol.jpg?1598115021',
       bio: "First user's bio",
       posts_counter: 0
@@ -40,19 +44,21 @@ namespace :db do
     )
 
     # create 20 users
-    20.times do |n|
+    20.times do |_n|
       user = User.create!(
-        name: "User #{n + 1}",
-        photo: 'https://cdna.artstation.com/p/assets/images/images/029/616/034/large/alyssa-niziol-pfpsketch2-smol.jpg?1598115021',
-        bio: "User #{n + 1}'s bio",
+        name: Faker::Name.unique.name,
+        email: Faker::Internet.unique.email,
+        password: Faker::Internet.password,
+        photo: Faker::Avatar.image,
+        bio: Faker::Lorem.sentence(word_count: 10),
         posts_counter: 0
       )
 
       # create 5 posts for each user
-      5.times do |m|
+      5.times do |_m|
         post = Post.create!(
-          title: "Post #{m + 1}",
-          text: "Post #{m + 1}'s text",
+          title: Faker::Lorem.sentence(word_count: 3),
+          text: Faker::Lorem.paragraph(sentence_count: 10),
           comments_counter: 0,
           likes_counter: 0,
           author: user
@@ -62,16 +68,16 @@ namespace :db do
         2.times do |_l|
           Like.create!(
             author: user,
-            post: post
+            post:
           )
         end
 
         # create 3 comments for each post
-        3.times do |k|
+        3.times do |_k|
           Comment.create!(
-            text: "Comment #{k + 1}",
+            text: Faker::Lorem.sentence(word_count: 5),
             author: user,
-            post: post
+            post:
           )
         end
       end
