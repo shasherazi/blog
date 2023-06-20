@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 user = FactoryBot.create(:user)
-post = FactoryBot.create(:post, author: user)
+post = FactoryBot.create(:post_with_comments, author: user)
 
 RSpec.describe 'post index page', type: :feature do
   scenario 'display user profile picture' do
@@ -37,6 +37,13 @@ RSpec.describe 'post index page', type: :feature do
   scenario 'display number of likes' do
     visit user_posts_path(post.author)
     expect(page).to have_content(post.likes_counter)
+  end
+
+  scenario 'display first comment' do
+    comment = post.comments.first
+
+    visit user_posts_path(post.author)
+    expect(page).to have_content(comment.text)
   end
 
   scenario 'when clicked redirects to post show page' do
