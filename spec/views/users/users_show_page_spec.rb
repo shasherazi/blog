@@ -23,4 +23,9 @@ RSpec.describe 'user show page', type: :feature do
     visit user_path(user)
     expect(page).to have_content(user.bio)
   end
+
+  scenario 'display button to view all users post' do
+    visit user_path(user)
+    expect(page).to have_link('See all posts')
+  end
 end
