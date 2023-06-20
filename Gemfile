@@ -79,4 +79,4 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
-gem "faker", "~> 3.2"
+gem 'faker', '~> 3.2'
