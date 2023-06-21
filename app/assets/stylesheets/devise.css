@@ -1,4 +1,4 @@
-body{
+body {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6,7 +6,7 @@ body{
   gap: 1rem;
 }
 
-input{
+input {
   height: 30px;
   padding: 0 10px;
 }
