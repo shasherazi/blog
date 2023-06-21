@@ -23,7 +23,7 @@ RSpec.describe Like, type: :model do
   subject do
     Like.new(
       author: user,
-      post: post
+      post:
     )
   end
 

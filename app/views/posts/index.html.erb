@@ -4,7 +4,7 @@
   <br>
   <br>
   <br>
-  <% @user.posts.each do |post| %>
+  <% @posts.each do |post| %>
     <%= render "shared/post_preview", post: post, user: @user, trim: true %>
     <div class="comments-box">
       <% post.comments.each do |comment| %>
@@ -17,5 +17,8 @@
     <a href="<%= users_path %>">
       Go to all users
     </a>
+  </button>
+  <button>
+    Pagination
   </button>
 </div>
