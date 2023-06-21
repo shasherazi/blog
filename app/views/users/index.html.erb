@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag "users" %>
+
 <div class="users">
   <div class="nav">
     <% if user_signed_in? %>
@@ -12,8 +12,6 @@
         turbo_confirm: "Are you sure you want to log out?"
       },
       class: "signout" %>
-    <% else %>
-      <%= link_to "Sign in", new_user_session_path %>
     <% end %>
   </div>
   <ul class="users-list">
