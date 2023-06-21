@@ -1,0 +1,12 @@
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+input{
+  height: 30px;
+  padding: 0 10px;
+}
